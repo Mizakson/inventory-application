@@ -1,20 +1,21 @@
 const pool = require("./pool")
 
 async function getAllTeams() {
-    const rows = await pool.query("SELECT * FROM teams");
+    const { rows } = await pool.query("SELECT * FROM teams");
     return rows
 }
 
-async function insertTeam(teamName, city, country) {
-    await pool.query("INSERT INTO teams (team_name, city, country) VALUES ($1, $2, $3)", [teamName, city, country])
-}
+// async function insertTeam(teamName, city, country) {
+//     await pool.query("INSERT INTO teams (team_name, city, country) VALUES ($1, $2, $3)", [teamName, city, country])
+// }
 
 // updateTeam
 
 // deleteTeam
 
 async function getAllPlayers() {
-    const rows = await pool.query("SELECT * FROM players");
+    const { rows } = await pool.query("SELECT * FROM players");
+    return rows
 }
 
 // insertPlayer
@@ -25,6 +26,6 @@ async function getAllPlayers() {
 
 module.exports = {
     getAllTeams,
-    insertTeam,
+    // insertTeam,
     getAllPlayers,
 }
