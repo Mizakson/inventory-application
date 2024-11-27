@@ -8,10 +8,8 @@ app.set("view engine", "ejs")
 app.use(express.urlencoded({ extended: true }))
 
 const indexRouter = require("./routes/indexRouter")
-const teamsRouter = require("./routes/teamsRouter")
 
 app.use("/", indexRouter)
-app.use("/teams", teamsRouter)
 
 const PORT = 3000
 app.listen(PORT, () => {
