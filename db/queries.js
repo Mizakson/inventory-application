@@ -5,7 +5,9 @@ async function getAllTeams() {
     return rows
 }
 
-// insertTeam
+async function insertTeam(teamName, city, country) {
+    await pool.query("INSERT INTO teams (team_name, city, country) VALUES ($1, $2, $3)", [teamName, city, country])
+}
 
 // updateTeam
 
@@ -23,5 +25,6 @@ async function getAllPlayers() {
 
 module.exports = {
     getAllTeams,
+    insertTeam,
     getAllPlayers,
 }
