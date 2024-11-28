@@ -1,5 +1,5 @@
 require("dotenv").config()
-
+const { pool } = require("./db/pool")
 const express = require("express")
 const path = require("path")
 const app = express()
@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }))
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath))
 
-app.use("/", indexRouter)
+app.use("/", (req, res) => {
+    console.log(pool)
+})
 
 const PORT = 3000
 app.listen(PORT, () => {
