@@ -1,9 +1,9 @@
-const { pool } = require("./pool")
+const pool = require("./pool")
 
 async function getAllTeams(req, res) {
     // undefined error here?
     const { rows } = await pool.query("SELECT * FROM teams")
-    console.log(rows)
+    return rows
 }
 
 module.exports = {

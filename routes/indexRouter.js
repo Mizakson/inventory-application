@@ -3,9 +3,7 @@ const indexRouter = Router()
 const indexController = require("../controllers/indexController")
 const pool = require("../db/pool")
 
-indexRouter.get("/", (req, res) => {
-    // console.log statement works here
-    console.log(pool)
-})
+// error: password authentication failed for user <username>
+indexRouter.get("/", indexController.logTeams)
 
 module.exports = indexRouter
