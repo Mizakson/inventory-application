@@ -1,5 +1,5 @@
 require("dotenv").config()
-const { pool } = require("./db/pool")
+const pool  = require("./db/pool")
 const express = require("express")
 const path = require("path")
 const app = express()
