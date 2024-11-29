@@ -13,9 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath))
 
-app.use("/", (req, res) => {
-    console.log(pool)
-})
+app.use("/", indexRouter)
 
 const PORT = 3000
 app.listen(PORT, () => {
