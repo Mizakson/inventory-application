@@ -15,6 +15,13 @@ app.use(express.static(assetsPath))
 
 app.use("/", (req, res) => {
     console.log(pool)
+    res.render("index", {
+        host: pool.options.host,
+        user: pool.options.user,
+        password: pool.options.password,
+        port: pool.options.port,
+        database: pool.options.database,
+    })
 })
 
 const PORT = 3000
