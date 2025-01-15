@@ -11,9 +11,19 @@
             </div>
         </div>
         <div class="content">
-             <div class="leagues-btns">
-                <button><a href="/leagues">View Leagues</a></button>
-             </div>
+            <div class="leagues">
+                <% for (const prop in leagues) {%> 
+                    <ul><%= leagues[prop]["league_name"]%> -- <%= leagues[prop]["country"] %></ul>
+                    <div class="league-options">
+                        <button><a href="/league">View League</a></button>
+                        <button><a href="/update">Update League</a></button>
+                        <button><a href="/delete">Delete League</a></button>
+                    </div>
+                <%} %>
+            </div>
+            <div class="leagues-btns">
+                <button><a href="/add-league">Add League</a></button>
+            </div>
         </div>
             
     </body>
