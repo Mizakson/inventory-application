@@ -12,8 +12,10 @@ const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath))
 
 const indexRouter = require("./routes/indexRouter")
+const teamsRouter = require("./routes/teamsRouter")
 
 app.use("/", indexRouter)
+app.use("/league", teamsRouter)
 
 const PORT = 3000
 app.listen(PORT, () => {

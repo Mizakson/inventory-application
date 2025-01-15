@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team Name Here</title>
+    </head>
+    <body>
+        <div class="team-info">
+            <% for (const prop in teams) {%> 
+                <ul><%= teams[prop]["team_name"]%></ul>
+                <div class="league-options">
+                    <button><a href="/team/<%= teams[prop]["team_id"] %>">View Team</a></button>
+                    <button><a href="/team-update/<%= teams[prop]["team_id"] %>">Update Team</a></button>
+                    <button><a href="/team-delete/<%= teams[prop]["team_id"] %>">Delete Team</a></button>
+                </div>
+            <%} %>
+        </div>
+
+    </body>
+</html>
