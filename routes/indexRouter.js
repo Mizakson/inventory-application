@@ -8,6 +8,6 @@ indexRouter.get("/add-league", indexController.addLeagueFormGet)
 indexRouter.post("/add-league", indexController.addLeagueFormPost)
 
 indexRouter.get("/update-league/:leagueId", indexController.updateLeagueFormGet)
-// indexRouter.post("/update-league/:leagueId", indexController.updateLeagueFromPost)
+indexRouter.post("/update-league/:leagueId", indexController.updateLeagueFormPost)
 
 module.exports = indexRouter
