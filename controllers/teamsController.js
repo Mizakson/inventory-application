@@ -12,7 +12,7 @@ async function teamsPageGet(req, res) {
     }
     else {
         res.render("error", {
-            errorMsg: "The league you are look for has not added a team yet!",
+            errorMsg: "The league you are looking for has not added any teams yet!",
         })
     }
 }
