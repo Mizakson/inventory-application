@@ -25,6 +25,11 @@ async function getTeamDetails(id) {
     return rows
 }
 
+async function getTeamById(id) {
+    const { rows } = await pool.query("SELECT * FROM teams WHERE team_id = $1", [id])
+    return rows
+}
+
 async function getPlayersFromTeam(id) {
     const { rows } = await pool.query("SELECT * FROM players WHERE team_id = $1", [id])
     return rows 
@@ -37,6 +42,8 @@ async function addLeague(name, country) {
 async function updateLeague(id, name, country) {
     await pool.query("UPDATE leagues SET league_name = $1, country = $2 WHERE league_id = $3", [name, country, id])
 }
+
+
 
 module.exports = {
     getAllLeagues,

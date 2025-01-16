@@ -5,11 +5,15 @@ async function teamsPageGet(req, res) {
     const { leagueId } = req.params
     const teams = await db.getTeamsByLeague(leagueId)
 
+    const sortedArr = teams.slice(0)
+    sortedArr.sort(function(a,b) {
+        return a["team_id"] - b["team_id"];
+    })
     
     if (teams.length > 0) {
         console.log("Teams: ", teams)
         res.render("team", {
-            teams: teams
+            teams: sortedArr,
         })
     }
     else {
