@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Team Name Here</title>
+        <title><%= teams[0]["league_name"]%></title>
     </head>
     <body>
+        <h1><%= teams[0]["league_name"]%></h1>
         <div class="team-info">
             <% for (const prop in teams) {%> 
                 <ul><%= teams[prop]["team_name"]%></ul>
