@@ -20,8 +20,14 @@ async function getTeamDetails(id) {
     return rows
 }
 
+async function getPlayersFromTeam(id) {
+    const { rows } = await pool.query("SELECT * FROM players WHERE team_id = $1", [id])
+    return rows 
+}
+
 module.exports = {
     getAllLeagues,
     getTeamsByLeague,
     getTeamDetails,
+    getPlayersFromTeam,
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= players[0]["team_name"]%></title>
+    </head>
+    <body>
+        <h1><%= players[0]["team_name"]%></h1>
+        <div class="info">
+            <% for (const prop in players) {%> 
+                <ul>Name: <%= players[prop]["player_name"]%> -- Position: <%= players[prop]["position"] %> </ul>
+                <div class="options">
+                    <button><a href="/player-add/<%= players[prop]["player_id"] %>">Add Player</a></button>
+                    <button><a href="/player-update/<%= players[prop]["player_id"] %>">Update Player</a></button>
+                    <button><a href="/player-delete/<%= players[prop]["player_id"] %>">Delete Player</a></button>
+                </div>
+            <%} %>
+        </div>
+
+    </body>
+</html>
