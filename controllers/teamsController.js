@@ -52,25 +52,27 @@ async function updateTeamFormGet(req, res) {
     console.log(teamId, team)
 
     res.render("updateTeam", {
-        title: "Update League",
+        title: "Update Team",
         teamId: teamId,
-        name: team[0]["league_name"],
+        name: team[0]["team_name"],
     })
 }
 
-// async function updateLeagueFormPost(req, res) {
-//     const { leagueId } = req.params
-//     const name = req.body.leagueName
-//     const country = req.body.country
+async function updateTeamFormPost(req, res) {
+    const { teamId } = req.params
+    const name = req.body.teamName
 
-//     await db.updateLeague(leagueId, name, country)
-//     res.redirect("/")
-//     return
-// }
+    console.log(teamId, name)
+   
+    await db.updateTeam(teamId, name)
+    res.redirect(`/team/${teamId}`)
+    return
+}
 
 module.exports = {
     teamsPageGet,
     addTeamFormGet,
     addTeamFormPost,
     updateTeamFormGet,
+    updateTeamFormPost,
 }

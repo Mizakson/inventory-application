@@ -47,8 +47,8 @@ async function addTeam(name, leagueId) {
     await pool.query("INSERT INTO teams (team_name, league_id) VALUES ($1, $2)", [name, leagueId])
 }
 
-async function updateTeam(id, name, ) {
-    await pool.query("UPDATE teams SET team_name = $1 WHERE league_id = $2", [name, id])
+async function updateTeam(id, name) {
+    await pool.query("UPDATE teams SET team_name = $1 WHERE team_id = $2", [name, id])
 }
 
 
@@ -62,4 +62,5 @@ module.exports = {
     updateLeague,
     getTeamById,
     addTeam,
+    updateTeam
 }
