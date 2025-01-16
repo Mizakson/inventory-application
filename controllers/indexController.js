@@ -10,6 +10,23 @@ async function indexHomePageGet(req, res) {
     })
 }
 
+async function addLeagueFormGet(req, res) {
+    res.render("addLeague", {
+        title: "Add League",
+    })
+}
+
+async function addLeagueFormPost(req, res) {
+    const name = req.body.leagueName
+    const country = req.body.country
+
+    await db.addLeague(name, country)
+    res.redirect("/")
+    return
+}
+
 module.exports = {
     indexHomePageGet,
+    addLeagueFormGet,
+    addLeagueFormPost,
 }

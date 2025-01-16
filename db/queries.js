@@ -25,9 +25,14 @@ async function getPlayersFromTeam(id) {
     return rows 
 }
 
+async function addLeague(name, country) {
+    await pool.query("INSERT INTO leagues (league_name, country) VALUES ($1, $2)", [name, country])
+}
+
 module.exports = {
     getAllLeagues,
     getTeamsByLeague,
     getTeamDetails,
     getPlayersFromTeam,
+    addLeague,
 }
