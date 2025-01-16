@@ -25,8 +25,28 @@ async function addLeagueFormPost(req, res) {
     return
 }
 
+async function updateLeagueFormGet(req, res) {
+    const { leagueId } = req.params
+    const league = await db.getLeagueById(leagueId)
+
+    console.log(leagueId, league)
+
+    res.render("updateLeague", {
+        title: "Update League",
+        leagueId: leagueId,
+        name: league[0]["league_name"],
+        country: league[0]["country"],
+    })
+}
+
+// async function updateLeagueFormPost(req, res) {
+
+// }
+
 module.exports = {
     indexHomePageGet,
     addLeagueFormGet,
     addLeagueFormPost,
+    updateLeagueFormGet,
+    // updateLeagueFormPost
 }

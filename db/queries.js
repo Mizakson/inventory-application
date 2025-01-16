@@ -5,6 +5,11 @@ async function getAllLeagues() {
     return rows
 }
 
+async function getLeagueById(id) {
+    const { rows } = await pool.query("SELECT * FROM leagues WHERE league_id = $1", [id])
+    return rows
+}
+
 // async function getAllTeams() {
 //     const { rows } = await pool.query("SELECT * FROM teams")
 //     return rows
@@ -31,6 +36,7 @@ async function addLeague(name, country) {
 
 module.exports = {
     getAllLeagues,
+    getLeagueById,
     getTeamsByLeague,
     getTeamDetails,
     getPlayersFromTeam,

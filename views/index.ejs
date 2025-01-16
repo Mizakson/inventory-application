@@ -16,8 +16,8 @@
                     <ul><%= leagues[prop]["league_name"]%> -- <%= leagues[prop]["country"] %></ul>
                     <div class="league-options">
                         <button><a href="/league/<%= leagues[prop]["league_id"] %>">View League</a></button>
-                        <button><a href="/update/<%= leagues[prop]["league_id"] %>">Update League</a></button>
-                        <button><a href="/delete/<%= leagues[prop]["league_id"] %>">Delete League</a></button>
+                        <button><a href="/update-league/<%= leagues[prop]["league_id"] %>">Update League</a></button>
+                        <button><a href="/delete-league-<%= leagues[prop]["league_id"] %>">Delete League</a></button>
                     </div>
                 <%} %>
             </div>
