@@ -35,16 +35,17 @@ async function addTeamFormGet(req, res) {
     })
 }
 
-// async function addLeagueFormPost(req, res) {
-//     const name = req.body.leagueName
-//     const country = req.body.country
+async function addTeamFormPost(req, res) {
+    const { leagueId } = req.params
+    const name = req.body.teamName
+    console.log(name, leagueId)
 
-//     await db.addLeague(name, country)
-//     res.redirect("/")
-//     return
-// }
+    await db.addTeam(name, leagueId)
+    res.redirect(`/league/${leagueId}`)
+    return
+}
 
-// async function updateLeagueFormGet(req, res) {
+// async function updateTeamFormGet(req, res) {
 //     const { leagueId } = req.params
 //     const league = await db.getLeagueById(leagueId)
 
@@ -71,4 +72,5 @@ async function addTeamFormGet(req, res) {
 module.exports = {
     teamsPageGet,
     addTeamFormGet,
+    addTeamFormPost
 }
