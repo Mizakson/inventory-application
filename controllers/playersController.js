@@ -8,7 +8,8 @@ async function playersPageGet(req, res) {
     if (players.length > 0) {
         console.log("Players: ", players)
         res.render("players", {
-            players: players
+            players: players,
+            teamId: teamId,
         })
     }
     else {
