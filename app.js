@@ -18,6 +18,7 @@ const playersRouter = require("./routes/playersRouter")
 app.use("/", indexRouter)
 app.use("/league", teamsRouter)
 app.use("/team", playersRouter)
+// app.use("/player", playerDetailsRouter)
 
 const PORT = 3000
 app.listen(PORT, () => {
