@@ -64,6 +64,10 @@ async function getPlayerById(id) {
     return rows
 }
 
+async function deletePlayerQuery(id) {
+    await pool.query("DELETE FROM players WHERE player_id = $1", [id])
+}
+
 
 module.exports = {
     getAllLeagues,
@@ -79,4 +83,5 @@ module.exports = {
     addPlayer,
     updatePlayer,
     getPlayerById,
+    deletePlayerQuery,
 }

@@ -52,9 +52,19 @@ async function updatePlayerFormPost(req, res) {
     return
 }
 
+async function deletePlayer(req, res) {
+    const { playerId } = req.params
+    const teamId = await db.getPlayerById(playerId) 
+
+    await db.deletePlayerQuery(playerId)
+    res.redirect(`/team/${teamId[0]["team_id"]}`)
+    return
+}
+
 module.exports = {
     addPlayerFormGet,
     addPlayerFormPost,
     updatePlayerFormGet,
     updatePlayerFormPost,
+    deletePlayer
 }
