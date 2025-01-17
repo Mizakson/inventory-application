@@ -51,8 +51,8 @@ async function updateTeam(id, name) {
     await pool.query("UPDATE teams SET team_name = $1 WHERE team_id = $2", [name, id])
 }
 
-async function addPlayer(name, position) {
-    await pool.query("INSERT INTO players (player_name, position) VALUES ($1, $2)", [name, position])
+async function addPlayer(name, position, teamId) {
+    await pool.query("INSERT INTO players (player_name, position, team_id) VALUES ($1, $2, $3)", [name, position, teamId])
 }
 
 async function updatePlayer(id, name, position) {

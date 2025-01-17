@@ -11,7 +11,15 @@ async function addPlayerFormGet(req, res) {
 }
 
 async function addPlayerFormPost(req, res) {
-    return 0
+    const { teamId } = req.params
+
+    const name = req.body.name
+    const position = req.body.position
+
+
+    await db.addPlayer(name, position, teamId)
+    res.redirect(`/team/${teamId}`)
+    return
 }
 
 module.exports = {
