@@ -6,7 +6,6 @@
     <body>
         <h1>Players</h1>
         <div class="info">
-            <button><a href="/player/add/<%= teamId %>">Add Player</a></button>
             <% for (const prop in players) {%> 
                 <ul>Name: <%= players[prop]["player_name"]%> -- Position: <%= players[prop]["position"] %> </ul>
                 <div class="options">
