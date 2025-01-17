@@ -59,7 +59,10 @@ async function updatePlayer(id, name, position) {
     await pool.query("UPDATE players SET player_name = $1, position = $2 WHERE player_id = $3", [name, position, id])
 }
 
-// getPlayerById?
+async function getPlayerById(id) {
+    const { rows } = await pool.query("SELECT * FROM players WHERE player_id = $1", [id])
+    return rows
+}
 
 
 module.exports = {
@@ -75,4 +78,5 @@ module.exports = {
     updateTeam,
     addPlayer,
     updatePlayer,
+    getPlayerById,
 }

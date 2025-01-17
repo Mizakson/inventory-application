@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <div class="form-container">
+            <form action="/player/update/<%= playerId %>" method="post">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" value="<%= name %>">
+
+                <label for="position">Position: </label>
+                <select name="position" id="position">
+                    <option value="ATT">ATT</option>
+                    <option value="MID">MID</option>
+                    <option value="DEF">DEF</option>
+                    <option value="GK">GK</option>
+                </select>
+                <button type="submit">Submit</button>
+                <div>
+                    <button><a href="/">Go Home</a></button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

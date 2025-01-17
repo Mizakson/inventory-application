@@ -22,7 +22,39 @@ async function addPlayerFormPost(req, res) {
     return
 }
 
+async function updatePlayerFormGet(req, res) {
+    const { playerId } = req.params
+
+    const info = await db.getPlayerById(playerId) 
+
+    const name = info[0]["player_name"]
+    // const position = info[0]["position"]
+    // const position = req.body.position
+
+    console.log(name)
+
+    res.render("updatePlayer", {
+        title: "Update Player",
+        name: name,
+        playerId: playerId
+    })
+}
+
+async function updatePlayerFormPost(req, res) {
+    const { playerId } = req.params
+    const teamId = await db.getPlayerById(playerId) 
+
+    const name = req.body.name
+    const position = req.body.position
+
+    await db.updatePlayer(playerId, name, position)
+    res.redirect(`/team/${teamId[0]["team_id"]}`)
+    return
+}
+
 module.exports = {
     addPlayerFormGet,
-    addPlayerFormPost
+    addPlayerFormPost,
+    updatePlayerFormGet,
+    updatePlayerFormPost,
 }
