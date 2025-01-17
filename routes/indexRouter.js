@@ -10,4 +10,6 @@ indexRouter.post("/add-league", indexController.addLeagueFormPost)
 indexRouter.get("/update-league/:leagueId", indexController.updateLeagueFormGet)
 indexRouter.post("/update-league/:leagueId", indexController.updateLeagueFormPost)
 
+indexRouter.get("/delete-league/:leagueId", indexController.deleteLeague)
+
 module.exports = indexRouter

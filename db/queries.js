@@ -75,6 +75,13 @@ async function deleteTeamQuery(id) {
     await pool.query("COMMIT")
 }
 
+async function deleteLeagueQuery(leagueId) {
+    await pool.query("BEGIN")
+    await pool.query("DELETE FROM teams WHERE league_id = $1", [leagueId])
+    await pool.query("DELETE FROM leagues WHERE league_id = $1", [leagueId])
+    await pool.query("COMMIT")
+}
+
 module.exports = {
     getAllLeagues,
     getLeagueById,
@@ -91,4 +98,5 @@ module.exports = {
     getPlayerById,
     deletePlayerQuery,
     deleteTeamQuery,
+    deleteLeagueQuery,
 }
