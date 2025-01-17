@@ -8,4 +8,6 @@ playersRouter.get("/:teamId", playersController.playersPageGet)
 playersRouter.get("/update/:teamId", teamsController.updateTeamFormGet)
 playersRouter.post("/update/:teamId", teamsController.updateTeamFormPost)
 
+playersRouter.get("/delete/:teamId", teamsController.deleteTeam)
+
 module.exports = playersRouter
