@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <div class="form-container">
+            <form action="/player/add/<%= teamId %>" method="post">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+
+                <label for="position">Position: </label>
+                <select name="position" id="position">
+                    <option value="ATT"></option>
+                    <option value="MID"></option>
+                    <option value="DEF"></option>
+                    <option value="GK"></option>
+                </select>
+
+                <div>
+                    <button type="submit">Submit</button>
+                    <button><a href="/">Go Home</a></button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

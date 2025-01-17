@@ -14,6 +14,7 @@ async function teamsPageGet(req, res) {
         console.log("Teams: ", teams)
         res.render("team", {
             teams: sortedArr,
+            leagueId: leagueId
         })
     }
     else {
