@@ -14,11 +14,12 @@ app.use(express.static(assetsPath))
 const indexRouter = require("./routes/indexRouter")
 const teamsRouter = require("./routes/teamsRouter")
 const playersRouter = require("./routes/playersRouter")
+const playerDetailsRouter = require("./routes/playerDetailsRouter")
 
 app.use("/", indexRouter)
 app.use("/league", teamsRouter)
 app.use("/team", playersRouter)
-// app.use("/player", playerDetailsRouter)
+app.use("/player", playerDetailsRouter)
 
 const PORT = 3000
 app.listen(PORT, () => {
