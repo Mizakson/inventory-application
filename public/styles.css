@@ -1,0 +1,30 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+    padding: 1.5%;
+}
+
+a, button {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    text-transform: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+a:hover {
+    color: blue;
+}
+
+.leagues-btns {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.league {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    align-items: center;
+}

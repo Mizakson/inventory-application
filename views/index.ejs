@@ -1,7 +1,10 @@
 <html>
     <head>
         <title><%= title %></title>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        </style>
     </head>
     <body>
         <div class="title-container">
@@ -17,12 +20,16 @@
             </div>
             <div class="leagues">
                 <% for (const prop in leagues) {%> 
-                    <ul><%= leagues[prop]["league_name"]%> -- <%= leagues[prop]["country"] %></ul>
-                    <div class="league-options">
-                        <button><a href="/league/<%= leagues[prop]["league_id"] %>">View League</a></button>
-                        <button><a href="/update-league/<%= leagues[prop]["league_id"] %>">Update League</a></button>
-                        <button><a href="/league/add-team/<%= leagues[prop]["league_id"] %>">Add Team</a></button>
-                        <button><a href="/delete-league/<%= leagues[prop]["league_id"] %>">Delete League</a></button>
+                    <div class="league">
+                        <div class="league-info">
+                            <ul><%= leagues[prop]["league_name"]%> -- <%= leagues[prop]["country"] %></ul>
+                        </div>
+                        <div class="league-options">
+                            <button><a href="/league/<%= leagues[prop]["league_id"] %>">View League</a></button>
+                            <button><a href="/update-league/<%= leagues[prop]["league_id"] %>">Update League</a></button>
+                            <button><a href="/league/add-team/<%= leagues[prop]["league_id"] %>">Add Team</a></button>
+                            <button><a href="/delete-league/<%= leagues[prop]["league_id"] %>">Delete League</a></button>
+                        </div>
                     </div>
                 <%} %>
             </div>
