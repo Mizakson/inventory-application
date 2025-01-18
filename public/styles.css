@@ -28,3 +28,23 @@ a:hover {
     grid-template-columns: 350px 1fr;
     align-items: center;
 }
+
+.team, .info {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    align-items: center; 
+}
+
+.back {
+    padding-top: 5%;
+}
+
+input, select, textarea, button{
+    font-family: inherit;
+}
+
+input {
+    margin-left: .5%;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%;
+}
